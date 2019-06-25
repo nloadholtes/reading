@@ -9,7 +9,7 @@ https://www.goodreads.com/review/list_rss/2953838
   conn.setRequestHeader("Content-Type", "text/xml");
   conn.send(null);
   var xmldoc = conn.responseXML;
-  var items = xmldoc.childNodes[0][0];
+  var items = xmldoc.childNodes[0].childNodes[1];
   for (var i = 0; i < items.children.length; i++)
   {
    var book = items.children[i];
