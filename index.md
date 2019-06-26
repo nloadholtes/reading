@@ -1,11 +1,24 @@
-# Hi! here's things I've read recently (or am currently re-reading)
+title: Books read by Nick Loadholtes
+---
 
-Here's my [RSS feed](https://www.goodreads.com/review/list_rss/2953838) where I'm getting this info
+# Hi! Here's things I've read recently (or am currently re-reading)
+
+The [RSS feed](https://www.goodreads.com/review/list_rss/2953838) where I'm getting this info
 
 And here is my [GoodReads.com page](https://www.goodreads.com/user/show/2953838-nick-loadholtes)
 
 
 ## Most recently read:
+<style>
+	#bookholder{
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.book{
+	width: 200px;
+	margin: 10px;
+	}
+</style>
 <div id="bookholder"></div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script language="JavaScript">
@@ -23,11 +36,11 @@ $(document).ready(function() {
 
 	$(data).find("item").each(function () { // or "item" or whatever suits your feed
 	var el = $(this);
-	box.append("<li>" +
+	box.append("<div class='book'>" +
 		"<a href=" + el.find("link").text() + ">" +
 		"<img src="+ el.find("book_medium_image_url").text()+"></a>" +
 		"<br>" + el.find("title").text() +
-		"</li>");
+		"</div>");
 		});
 	}
 		});
