@@ -1,8 +1,11 @@
-Hi! here's things I've read recently (or am currently re-reading)
+# Hi! here's things I've read recently (or am currently re-reading)
+
+Here's my [RSS feed](https://www.goodreads.com/review/list_rss/2953838) where I'm getting this info
+
+And here is my [GoodReads.com page](https://www.goodreads.com/user/show/2953838-nick-loadholtes)
 
 
-https://www.goodreads.com/review/list_rss/2953838
-
+## Most recently read:
 <div id="bookholder"></div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script language="JavaScript">
