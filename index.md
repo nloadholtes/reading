@@ -3,23 +3,31 @@ Hi! here's things I've read recently (or am currently re-reading)
 
 https://www.goodreads.com/review/list_rss/2953838
 
+<div id="bookholder"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script language="JavaScript">
-  var conn = new XMLHttpRequest();
-  conn.open("GET", "https://cors-anywhere.herokuapp.com/https://www.goodreads.com/review/list_rss/2953838", false);
-  conn.setRequestHeader("Content-Type", "text/xml");
-  conn.send(null);
-  var xmldoc = conn.responseXML;
-  var items = xmldoc.childNodes[0].childNodes[1];
-  for (var i = 0; i < items.children.length; i++)
-  {
-   var book = items.children[i];
-   var title = book.getElementsByTagName("title");
-   var img = book.getElementsByTagName("book_medium_img_url");
-   document.write("<tr><td>");
-   document.write(title[0].textContent.toString());
-   document.write("</td><td>");
-   document.write("<img src="+img[0].textContent.toString()+">");
-   document.write("</td></tr>");
-  }
+$(document).ready(function() {
+	//feed to parse
+	var box = $("#bookholder");
+	var feed = "https://cors-anywhere.herokuapp.com/https://www.goodreads.com/review/list_rss/2953838";
+	$.ajax(feed, {
+	accepts:{
+		xml:"application/rss+xml"
+	},
+	dataType:"xml",
+	success:function(data) {
+		//Credit: http://stackoverflow.com/questions/10943544/how-to-parse-an-rss-feed-using-javascript
+
+	$(data).find("item").each(function () { // or "item" or whatever suits your feed
+	var el = $(this);
+	box.append("<li>" +
+		"<a href=" + el.find("link").text() + ">" +
+		"<img src="+ el.find("book_medium_image_url").text()+"></a>" +
+		"<br>" + el.find("title").text() +
+		"</li>");
+		});
+	}
+		});
+	});
 </script>
  
