@@ -3,3 +3,5 @@ jekyll_xml:
     source: https://www.goodreads.com/review/list_rss/2953838
     cache: false
 
+
+theme: jekyll-theme-modernist
