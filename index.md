@@ -37,11 +37,15 @@ $(document).ready(function() {
 
 	$(data).find("item").each(function () { // or "item" or whatever suits your feed
 	var el = $(this);
-	box.append("<div class='book'>" +
-		"<a href=" + el.find("link").text() + ">" +
+	var book_details = "<a href=" + el.find("link").text() + ">" +
 		"<img src="+ el.find("book_medium_image_url").text()+"></a>" +
-		"<br>" + el.find("title").text() +
-		"</div>");
+		"<br><em>" + el.find("title").text() + "</em>";
+	if(el.find("user_rating").text() !== "0") {
+		book_details += "<br><b>My rating:" + el.find("user_rating").text();
+	} else {
+		book_details += "<br><em><b>Still reading...</b></em>"
+	}
+	box.append("<div class='book'>" + book_details + "</div>");
 		});
 	}
 		});
