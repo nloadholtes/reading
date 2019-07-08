@@ -43,7 +43,7 @@ $(document).ready(function() {
 	if(el.find("user_rating").text() !== "0") {
 		book_details += "<br><b>My rating:" + el.find("user_rating").text();
 	} else {
-		book_details += "<br><em><b>Still reading...</b></em>"
+		book_details += "<br><em><b><span style='background-color:currentColor'><span style='color:white'>Still reading...</span></span></b></em>"
 	}
 	box.append("<div class='book'>" + book_details + "</div>");
 		});
