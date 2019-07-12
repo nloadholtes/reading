@@ -18,12 +18,9 @@ And here is my [GoodReads.com page](https://www.goodreads.com/user/show/2953838-
 	margin: 10px;
 	}
 </style>
-## Currently Reading
-
+<h2>Currently Reading</h2>
 <div id="currently-reading"></div>
-
-## Previous Read
-
+<h2>Previously Read</h2>
 <div id="bookholder"></div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script language="JavaScript">
